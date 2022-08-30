@@ -47,7 +47,7 @@ int32_t main() {
 		sum_after_operation[l[i]] = sum_after_operation[l[i]] +
 		                            (operations_count[i] * d[i]);
 
-		sum_after_operation[r[i] + 1] = sum_after_operation[r[i]] -
+		sum_after_operation[r[i] + 1] = sum_after_operation[r[i]+1] -
 		                                (operations_count[i] * d[i]);
 	}
 
