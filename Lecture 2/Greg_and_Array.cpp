@@ -2,7 +2,7 @@
 using namespace std;
 // const int N = 0;
 #define int long long
-#define size 10005
+#define size 100100
 
 //But if your are submit the code please make this size as 10^5:
 //I am not taking size as 10^5 because i will be taking many such array
@@ -10,6 +10,8 @@ using namespace std;
 //online compilers.
 
 int32_t main() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
 	int n, m, k;
 	cin >> n >> m >> k;
 	int a[n + 1] = {0};//1 Based Index to simplify the problem.
@@ -39,21 +41,19 @@ int32_t main() {
 		operations_count[i] = operations_count[i - 1] + operations_count[i];
 	}
 
-
 	int sum_after_operation[size] = {0};
 
-	for (int i = 1; i <= n; i++) {
-
+	for (int i = 1; i <= 100100; i++) {
 		sum_after_operation[l[i]] = sum_after_operation[l[i]] +
 		                            (operations_count[i] * d[i]);
 
-		sum_after_operation[r[i] + 1] = sum_after_operation[r[i]+1] -
+		sum_after_operation[r[i] + 1] = sum_after_operation[r[i] + 1] -
 		                                (operations_count[i] * d[i]);
 	}
 
 	//Prefix sum:
 
-	for (int i = 1; i <= n; i++) {
+	for (int i = 1; i <= 100100; i++) {
 		sum_after_operation[i] = sum_after_operation[i - 1] +
 		                         sum_after_operation[i];
 	}
