@@ -1,13 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
-// const int N = 0;
 #define int long long
 
 vector<int>primes;
 
 void Prime_seive() {
 	const int N = 1000001;
-	bool p[N] = {0};
+	bool p[N + 10] = {0};
 
 	for (int i = 3; i * i <= N; i += 2) {
 		if (p[i] == 0) {
@@ -45,7 +44,7 @@ void Segmented_Sieve(int a, int b) {
 
 	for (int i = a; i <= b; i++) {
 		if (p[i - a] == 0) {
-			cout << i << " ";
+			cout << i << endl;
 		}
 	}
 	cout << endl;
