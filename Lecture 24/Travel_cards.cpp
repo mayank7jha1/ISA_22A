@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 // const int N = 0;
+#define int long long
 
 int Travel_Cards() {
 	int n, a, b, k, f;
@@ -41,23 +42,30 @@ int Travel_Cards() {
 		v.push_back(x.second);
 		total_cost += x.second;
 	}
-
+	//cout << total_cost << endl;
 
 	sort(v.rbegin(), v.rend());
-
-	for (int i = 0; i < k; i++) {
+	// for (auto x : v) {
+	// 	cout << x << endl;
+	// }
+	// cout << k << endl;
+	for (int i = 0; i < k and i < v.size(); i++) {
 		if (v[i] >= f) {
+			//cout << v[i] << " " << total_cost << " ";
+
 			total_cost = total_cost - v[i] + f;
 		} else {
 			break;
 		}
 	}
+	// cout << endl;
+	// cout << total_cost << endl;
 	return total_cost;
 }
 
 
 
-int main() {
+int32_t main() {
 	cout << Travel_Cards() << endl;
 }
 
