@@ -55,7 +55,7 @@ int main() {
 		F(j, 2, m - 1) {
 			int op1 = dp1[i][j - 1] + dp2[i][j + 1] + dp3[i + 1][j] + dp4[i - 1][j];
 			int op2 = dp1[i - 1][j] + dp2[i + 1][j] + dp3[i][j - 1] + dp4[i][j + 1];
-			ans = max(op1, op2);
+			ans = max({ans, op1, op2});
 		}
 	}
 	cout << ans << endl;
