@@ -1,0 +1,15 @@
+5 6
+1 2
+2 3
+2 4
+3 4
+4 5
+1 5V = 5 , E = 6;
+	//adjacency list for storing graph
+	vector<int> adj[V];
+	adj[0] = {1,2};
+	adj[1] = {2,3};
+	adj[2] = {2,4};
+	adj[3] = {3,4};
+	adj[4] = {4,5};
+	adj[5] = {1,5};
